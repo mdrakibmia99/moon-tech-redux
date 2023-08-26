@@ -1,16 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { PRODUCT_CONTEXT } from "../context/ProductProvider";
 
 const Home = () => {
- const [data,setData]=useState([])
-    useEffect(()=>{
-        fetch("https://jsonplaceholder.typicode.com/posts")
-        .then(res=> res.json())
-        .then(data=>setData(data))
-    },[])
-    console.log(data,"all data")
+  const {data} = useContext(PRODUCT_CONTEXT);
+  console.log(data)
+  
     return (
         <div>
-           <h1>This is home page</h1> 
+            <h1>This is home page</h1>
         </div>
     );
 };

@@ -1,14 +1,16 @@
 import { RouterProvider } from 'react-router-dom'
 import './App.css'
 import { routes } from './routes/routes'
+import ProductProvider from './context/ProductProvider'
 
 function App() {
 
 
   return (
-    <RouterProvider router={routes} >
+    <ProductProvider>
 
-    </RouterProvider>
+      <RouterProvider router={routes} ></RouterProvider>
+    </ProductProvider>
   )
 }
 
